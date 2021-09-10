@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>諸行無常</title>
+  <style>
+    body {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @supports (-webkit-touch-callout: none) {
+      body {
+        height: -webkit-fill-available;
+      }
+    }
+
+    figure {
+      text-align: center;
+    }
+
+    figure > p {
+      font-family: serif;
+      display: inline-block;
+      font-size: 6em;
+      writing-mode: vertical-lr;
+    }
+  </style>
+</head>
+<body>
+  <script type="module">
+    class Renderer extends Array {
+      render() {
+        document.body.append(...this);
+      }
+    }
+
+    new Renderer(
+      ["figure", [
+        ["p", "諸行無常"],
+        ["figcaption", "Nothing is permanent and everything is changing."],
+      ]],
+    ).map(function callback ([tag, content]) {
+      const element = document.createElement(tag);
+
+      if (Array.isArray(content)) {
+        for (const child of content) {
+          element.append(callback(child));
+        }
+      } else {
+        element.textContent = content;
+      }
+
+      return element;
+    }).render();
+  </script>
+</body>
+</html>
