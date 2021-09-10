@@ -39,12 +39,14 @@
       }
     }
 
-    new Renderer(
+    Object.defineProperty(Array, Symbol.species, { get() { return Renderer; } });
+
+    [
       ["figure", [
         ["p", "諸行無常"],
         ["figcaption", "Nothing is permanent and everything is changing."],
       ]],
-    ).map(function callback ([tag, content]) {
+    ].map(function callback ([tag, content]) {
       const element = document.createElement(tag);
 
       if (Array.isArray(content)) {
