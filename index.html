@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
+<head prefix="og: http://ogp.me/ns#">
   <meta charset="UTF-8">
   <title>諸行無常</title>
   <meta name="viewport" content="width=device-width">
   <meta name="color-scheme" content="light dark">
   <meta name="author" content="森建">
   <meta name="description" content="Nothing is permanent and everything is changing.">
+  <link rel="canonical" href="https://petamoriken.github.io/shogyo-mujo/">
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta property="og:url" content="https://petamoriken.github.io/shogyo-mujo/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://petamoriken.github.io/shogyo-mujo/ogp.png">
+  <meta property="og:title" content="諸行無常">
+  <meta property="og:description" content="Nothing is permanent and everything is changing.">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name=”twitter:site” content="@petamoriken">
   <style>
     body {
       width: 100%;
@@ -33,8 +44,6 @@
       writing-mode: vertical-lr;
     }
   </style>
-</head>
-<body>
   <script type="module">
     class Renderer extends Array {
       render() {
@@ -63,5 +72,7 @@
       return element;
     }).render();
   </script>
+</head>
+<body>
 </body>
 </html>
